@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="spotify">
+        <iframe src="https://open.spotify.com/embed/track/3FfUr0xIsriH6Cwcy5un13" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    
+</div>
+    
     <div class="container">
         <header>
             <h1 class="header-title">Chúc Mừng Lễ Tình Nhân - Valentine</h1>
@@ -45,8 +50,51 @@
                 <p>Thông tin đại diện liên lạc: <a href="tel:0899455126">Click here 💖💖</a></p>
                 </div>
                 <p>Ngày cập nhập gần nhất: 16/2/2025</p>
+                <p>Email đại diện: <a href="mailto:tuanduy.221007@gmail.com">tuanduy.221007@gmail.com</a></p>
+
            </div>
         </footer>
     </div>
+    <div class="container1">
+        <section class="feedback">
+            <h2>Đánh giá của bạn</h2>
+            <p>Chúng tôi rất trân trọng ý kiến của bạn!</p>
+
+            <!-- Form đánh giá -->
+            <form id="feedback-form" action="mailto:tuanduy.221007@gmail.com" method="POST" enctype="text/plain">
+                <!-- Xếp hạng sao -->
+                <div class="rating">
+                    <label for="rating-5" class="star">&#9733;</label>
+                    <input type="radio" name="rating" id="rating-5" value="5">
+                    <label for="rating-4" class="star">&#9733;</label>
+                    <input type="radio" name="rating" id="rating-4" value="4">
+                    <label for="rating-3" class="star">&#9733;</label>
+                    <input type="radio" name="rating" id="rating-3" value="3">
+                    <label for="rating-2" class="star">&#9733;</label>
+                    <input type="radio" name="rating" id="rating-2" value="2">
+                    <label for="rating-1" class="star">&#9733;</label>
+                    <input type="radio" name="rating" id="rating-1" value="1">
+                </div>
+
+                <!-- Nhận xét -->
+                <div class="review">
+                    <label for="review-text">Nhận xét của bạn:</label>
+                    <textarea id="review-text" name="review-text" rows="5" placeholder="Chia sẻ cảm nhận của bạn về sản phẩm/dịch vụ..."></textarea>
+                </div>
+
+                <!-- Gửi đánh giá -->
+                <button type="submit" class="submit-btn">Gửi Đánh Giá</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Thêm thông báo sau khi gửi form
+        document.getElementById("feedback-form").addEventListener("submit", function(event) {
+            // Không cần ngừng gửi form, vì đây là mailto và ứng dụng email sẽ mở lên
+            alert("Cảm ơn bạn đã gửi đánh giá!");
+        });
+    </script>
+
 </body>
 </html>
