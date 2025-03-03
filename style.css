@@ -1,4 +1,4 @@
-/* Thiết lập nền và văn bản cơ bản */
+Thiết lập nền và văn bản cơ bản
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -59,7 +59,7 @@ a .card1{
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.2);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -107,12 +107,17 @@ a .card1{
     text-decoration: none;
 }
 
+footer:hover{
+    /* content:""; */
+    border-radius: 15px;
+    border: 8px solid white;
+}
 footer {
-    background-color: #ff7b7b;
-    border-radius: 700px;
+    background-image: radial-gradient(circle, #ff8390, #ff7499, #ff66a7, #ff5ab9, #f452cf);
+    border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     text-align: center;
-    border: skyblue dotted 5px;
+    border: skyblue solid 5px;
     padding: 20px;
 }
 
@@ -170,7 +175,9 @@ footer a {
 .bodylichsu {
     background: #f8e0e6;
 }
-
+html{
+    background: #f8e0e6;
+}
 .anhlichsu{
     max-width: 50%;
     max-height: 100%;
@@ -191,6 +198,13 @@ footer a {
     text-align: center;
     font-size: 20px;
 }
+.dieuhuonglichsu{
+    position:relative;
+    top: 10px;
+    padding: 10px;
+    
+    
+}
 .contentlichsu h1{
     border-bottom-left-radius:30px ;
     color: white;
@@ -199,6 +213,7 @@ footer a {
 }
 
 .dieuhuonglichsu a {
+
     text-decoration: none;
     color: rgb(0, 0, 0);
     border-radius: 50px;
@@ -220,6 +235,9 @@ footer a {
 
 /* noi dung y nghia */
 .dieuhuongynghia a{
+    position:relative;
+    top: 10px;
+    padding: 10px;
     text-decoration: none;
     color: rgb(2, 1, 1);
     margin-right: 50px;
@@ -273,6 +291,10 @@ footer a {
 
 /* nội dung thông điệp */
 .dieuhuongthongdiep a{
+    position:relative;
+    top: 10px;
+    padding: 10px;
+    
     text-decoration: none;
     color: rgb(2, 1, 1);
     margin-right: 50px;
@@ -298,6 +320,7 @@ footer a {
     max-width: 70%;
     font-size: 18px;
 }
+
 .contentthongdiep img{
     margin-top:-900px ;
     margin-left: 900px;
@@ -305,7 +328,8 @@ footer a {
     height: 300px;
 }
 .contentthongdiep h1{
-    display:inline-block ;
+    /* display:inline-block ; */
+    width: 350px;
     border: white solid 5px;
     border-bottom-left-radius:30px ;
     color: white;
@@ -354,16 +378,21 @@ a .cuoi{
 
 /* Container chính */
 .container1 {
-    max-height: 100%;
-    height: 350px;
-    width: 100%;
-    margin: 0px 250px;
-    max-width: 700px; /* Giảm kích thước khung */
-    padding: 0px 20px; /* Điều chỉnh khoảng cách bên trong */
-    background-color: rgb(255, 255, 255); /* Màu trong suốt với độ mờ */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px); /* Thêm hiệu ứng mờ cho nền */
+    .container1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; 
+        width: 90%; /* Đảm bảo không bị tràn màn hình */
+        max-width: 700px; /* Giữ chiều rộng tối đa */
+        height: auto; /* Tự động điều chỉnh theo nội dung */
+        padding: 20px;
+        margin: 20px auto; /* Căn giữa theo chiều ngang */
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+    }
 }
 
 /* Tiêu đề và phần mô tả */
@@ -386,8 +415,10 @@ a .cuoi{
 /* Xếp hạng sao */
 .rating {
     display: flex;
+    flex-direction: row-reverse; /* Đảo ngược thứ tự hiển thị */
     justify-content: center;
-    margin-bottom: 15px; /* Giảm khoảng cách */
+    margin-bottom: 15px;
+    direction: rtl; /* Đảm bảo hover hoạt động từ trái sang phải */
 }
 
 .rating input {
@@ -395,20 +426,20 @@ a .cuoi{
 }
 
 .rating label {
-    font-size: 30px; /* Giảm kích thước sao */
+    font-size: 30px;
     color: #ccc;
     cursor: pointer;
     margin: 0 5px;
+    transition: color 0.3s;
 }
 
-.rating input:checked ~ label {
-    color: #ffcc00;
-}
-
+/* Khi chọn sao, tất cả sao trước nó cũng đổi màu */
+.rating input:checked ~ label,
 .rating label:hover,
 .rating label:hover ~ label {
     color: #ffcc00;
 }
+
 
 /* Nhận xét */
 .review {
